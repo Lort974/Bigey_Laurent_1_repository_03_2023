@@ -1,0 +1,200 @@
+/////////////////////////////////////////////////////// RESTAURANT MENU ***
+
+.image {
+    height: 275px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    >img {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.restaurant-menu {
+    position: relative;
+    margin-top: -46px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background: #F7F7F7;
+
+    >section {
+        padding: 32px 13px 40px 13px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+
+        >h2 {
+            text-align: left;
+            font-weight: 400;
+            width: 100%;
+        }
+
+        >.nofav {
+            position: absolute;
+            top: 36px;
+            right: 36px;
+        }
+
+        >div {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            opacity: 0;
+
+            >h3 {
+                font-weight: 300;
+                text-transform: uppercase;
+                height: 27px;
+                position: relative;
+            }
+
+            >h3::after {
+                content: "";
+                height: 0px;
+                width: 40px;
+                border: 1.5px solid $tertiary;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            >article {
+                background: #FFFFFF;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 15px;
+                padding: 12px 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+
+                >p:nth-child(1) {
+                    font-size: 18px;
+                    font-weight: 700;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+
+                >p:nth-child(2) {
+                    font-size: 15px;
+                }
+
+                >p:nth-child(3) {
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin-right: 0px;
+                    transition: all 300ms linear;
+                }
+
+                >div {
+                    background: $tertiary;
+                    position: absolute;
+                    right: -75px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 100%;
+                    width: 75px;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 300ms linear;
+
+                    >i {
+                        color: #FFFFFF;
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            >article::before {
+                content: "✓";
+                font-weight: 700;
+                font-family: 'Font Awesome 6 Free';
+                background: #FFFFFF;
+                color: $tertiary;
+                height: 24px;
+                width: 24px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+                position: absolute;
+                top: 50%;
+                right: -49.5px;
+                transform: translateY(-50%);
+                transition: all 300ms linear;
+            }
+
+            >article::after {
+                content: "";
+                font-weight: 700;
+                font-family: 'Font Awesome 6 Free';
+                background: $tertiary;
+                position: absolute;
+                right: -75px;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 100%;
+                width: 75px;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 300ms linear;
+            }
+
+            >article:hover::before {
+                right: 25.5px;
+                transition: all 300ms linear;
+            }
+
+            >article:hover::after {
+                right: 0px;
+                transition: all 300ms linear;
+            }
+
+            >article:hover > p:nth-child(3) {
+                margin-right: 75px;
+                transition: all 300ms linear;
+            }
+
+            >article:hover > div {
+                right: 0px;
+                transition: all 300ms linear;
+            }
+        }
+
+        >div:nth-child(3) {
+            animation: 1s linear 0.5s 1 fadeIn forwards;
+        }
+
+        >div:nth-child(4) {
+            animation: 1s linear 1s 1 fadeIn forwards;
+        }
+
+        >div:nth-child(5) {
+            animation: 1s linear 1.5s 1 fadeIn forwards;
+        }
+    }
+}

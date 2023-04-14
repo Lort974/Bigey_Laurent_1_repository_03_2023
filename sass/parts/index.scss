@@ -1,0 +1,230 @@
+/////////////////////////////////////////////////////// LOADING SPINNER ***
+
+@keyframes loadingSpinner {
+    0% {
+        z-index: 1;
+        background-color: $primary;
+        opacity: 1;
+    }
+    33% {
+        z-index: 1;
+        background-color: $secondary;
+        opacity: 1;
+    }
+    67% {
+        z-index: 1;
+        background-color: $tertiary;
+        opacity: 1;
+    }
+    90% {
+        z-index: 1;
+        background-color: $primary;
+        opacity: 1;
+    }
+    99% {
+        z-index: 1;
+        background-color: $primary;
+        opacity: 0;
+    }
+    100% {
+        z-index: -1;
+        background-color: $primary;
+        opacity: 0;
+    }
+}
+
+.animation-box {
+    animation: 3s ease-out 0s 1 loadingSpinner;
+    content: "";
+    position: fixed;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: -1;
+}
+
+/////////////////////////////////////////////////////// LOCATION ***
+
+.location {
+    background: #EAEAEA;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    gap: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
+/////////////////////////////////////////////////////// ACTION ***
+
+.action {
+    background: #F7F7F7;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+
+    >p {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+/////////////////////////////////////////////////////// HOW TO USE ***
+
+.how-to-use {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    padding: 48px 20px 68px 20px;
+    background: #ffffff;
+    width: 100%;
+
+    >ol {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 12px;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 25px;
+        
+        >li {
+            background: #F7F7F7;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            height: 72px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+            padding: 0 0 0 35px;
+            box-sizing: border-box;
+
+            >p:nth-child(1) {
+                height: 24px;
+                width: 24px;
+                border-radius: 20px;
+                position: absolute;
+                left: -12px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #9356DC;
+                color: #ffffff;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            >i {
+                font-size: 18px;
+                color: #7E7E7E;
+            }
+        }
+    }
+}
+
+/////////////////////////////////////////////////////// RESTAURANTS LIST ***
+
+.restaurants-list {
+    padding: 48px 20px 68px 20px;
+    background: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant-card {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    >a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    >a:nth-child(1) {
+        height: 178px;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        >span {
+            position: absolute;
+            top: 13px;
+            right: 13px;
+            z-index: 2;
+            background: $tertiary;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+            text-align: center;
+            color: #008766;
+            height: 29px;
+            padding: 0 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        >img {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    >a:nth-child(2) {
+        padding: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        >p:nth-child(1) {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        >p:nth-child(2) {
+            font-size: 17px;
+        }
+    }
+
+    >div {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        width: 23px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >i {
+            font-size: 21px;
+        }
+    }
+}
