@@ -24,11 +24,10 @@
 }
 
 .restaurant-menu {
-    position: relative;
-    margin-top: -46px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    background: #F7F7F7;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 
     >section {
         padding: 32px 13px 40px 13px;
@@ -36,17 +35,41 @@
         flex-direction: column;
         gap: 40px;
         align-items: center;
+        margin-top: -46px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        background: #F7F7F7;
+        width: 100%;
+        position: relative;
+
+        @media screen and (min-width: 769px) {
+            max-width: 1055px;
+        }
+
+        >* {
+            @media screen and (min-width: 769px) {
+                max-width: 635px;
+            }
+        }
 
         >h2 {
             text-align: left;
             font-weight: 400;
             width: 100%;
-        }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-        >.nofav {
-            position: absolute;
-            top: 36px;
-            right: 36px;
+            @media screen and (min-width: 769px) {
+                justify-content: center;
+                gap: 24px;
+            }
+
+            >.nofav {
+                font-size: 22px;
+                padding: 0 28px 0 1px;
+                box-sizing: border-box;
+            }
         }
 
         >div {
@@ -185,15 +208,15 @@
             }
         }
 
-        >div:nth-child(3) {
+        >div:nth-child(2) {
             animation: 1s linear 0.5s 1 fadeIn forwards;
         }
 
-        >div:nth-child(4) {
+        >div:nth-child(3) {
             animation: 1s linear 1s 1 fadeIn forwards;
         }
 
-        >div:nth-child(5) {
+        >div:nth-child(4) {
             animation: 1s linear 1.5s 1 fadeIn forwards;
         }
     }
