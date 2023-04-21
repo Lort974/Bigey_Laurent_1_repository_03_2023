@@ -102,27 +102,53 @@
                 border-radius: 15px;
                 padding: 12px 15px;
                 display: flex;
+                flex-direction: column;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 position: relative;
                 cursor: pointer;
                 overflow: hidden;
+                height: 69px;
+                box-sizing: border-box;
 
                 >p:nth-child(1) {
                     font-size: 18px;
                     font-weight: 700;
-                    width: 100%;
                     margin-bottom: 5px;
+                    inline-size: 230px;
+                    height: 18px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: all 300ms linear;
+
+                    @media screen and (min-width: 769px) {
+                        inline-size: unset;
+                    }
                 }
 
                 >p:nth-child(2) {
                     font-size: 15px;
+                    inline-size: 230px;
+                    height: 18px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: all 300ms linear;
+
+                    @media screen and (min-width: 769px) {
+                        inline-size: unset;
+                    }
                 }
 
                 >p:nth-child(3) {
                     font-size: 15px;
                     font-weight: 700;
                     margin-right: 0px;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-end;
                     transition: all 300ms linear;
                 }
 
@@ -197,14 +223,25 @@
                 transition: all 300ms linear;
             }
 
-            >article:hover > p:nth-child(3) {
-                margin-right: 75px;
-                transition: all 300ms linear;
-            }
+            >article:hover {
+                > div {
+                    right: 0px;
+                    transition: all 300ms linear;
+                }
 
-            >article:hover > div {
-                right: 0px;
-                transition: all 300ms linear;
+                >p:nth-child(1), >p:nth-child(2) {
+                    inline-size: 160px;
+                    transition: all 300ms linear;
+
+                    @media screen and (min-width: 769px) {
+                        inline-size: 425px;
+                    }
+                }
+                
+                > p:nth-child(3) {
+                    margin-right: 75px;
+                    transition: all 300ms linear;
+                }
             }
         }
 

@@ -100,6 +100,10 @@ ol {
   transition: all 500ms;
 }
 
+.restaurant-menu .nofav {
+  color: #F7F7F7;
+}
+
 .nofav:hover {
   color: transparent;
   background-clip: text;
@@ -505,25 +509,53 @@ ol {
   border-radius: 15px;
   padding: 12px 15px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  height: 69px;
+  box-sizing: border-box;
 }
 .restaurant-menu > section > div > article > p:nth-child(1) {
   font-size: 18px;
   font-weight: 700;
-  width: 100%;
   margin-bottom: 5px;
+  inline-size: 230px;
+  height: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 300ms linear;
+}
+@media screen and (min-width: 769px) {
+  .restaurant-menu > section > div > article > p:nth-child(1) {
+    inline-size: unset;
+  }
 }
 .restaurant-menu > section > div > article > p:nth-child(2) {
   font-size: 15px;
+  inline-size: 230px;
+  height: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 300ms linear;
+}
+@media screen and (min-width: 769px) {
+  .restaurant-menu > section > div > article > p:nth-child(2) {
+    inline-size: unset;
+  }
 }
 .restaurant-menu > section > div > article > p:nth-child(3) {
   font-size: 15px;
   font-weight: 700;
   margin-right: 0px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   transition: all 300ms linear;
 }
 .restaurant-menu > section > div > article > div {
@@ -590,12 +622,21 @@ ol {
   right: 0px;
   transition: all 300ms linear;
 }
-.restaurant-menu > section > div > article:hover > p:nth-child(3) {
-  margin-right: 75px;
-  transition: all 300ms linear;
-}
 .restaurant-menu > section > div > article:hover > div {
   right: 0px;
+  transition: all 300ms linear;
+}
+.restaurant-menu > section > div > article:hover > p:nth-child(1), .restaurant-menu > section > div > article:hover > p:nth-child(2) {
+  inline-size: 160px;
+  transition: all 300ms linear;
+}
+@media screen and (min-width: 769px) {
+  .restaurant-menu > section > div > article:hover > p:nth-child(1), .restaurant-menu > section > div > article:hover > p:nth-child(2) {
+    inline-size: 425px;
+  }
+}
+.restaurant-menu > section > div > article:hover > p:nth-child(3) {
+  margin-right: 75px;
   transition: all 300ms linear;
 }
 .restaurant-menu > section > div:nth-child(2) {
